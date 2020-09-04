@@ -1,0 +1,16 @@
+name: Build Pipeline
+
+on: 
+  push:
+    paths:
+      - 'idxtests/**'
+      - '.github/workflows/idxtests*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      
+      - name: Docker build
+        run: docker build idxtests/

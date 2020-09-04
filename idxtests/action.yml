@@ -1,0 +1,16 @@
+name: idxtests
+description: Parses and pushes surefire test results in Elasticsearch cluster
+author: SkySoft-ATM
+branding:
+  icon: 'anchor'
+  color: 'blue'
+inputs:
+  args:
+    description: 'arguments send to idxtests cli'
+    required: false
+    default: '--help'
+runs:
+  using: docker
+  image: 'Dockerfile'
+  args:
+    - {{ inputs.args }}
